@@ -1,0 +1,38 @@
+<h1>Book Page</h1>
+
+<p *ngIf="!books"><b>Now Loading...</b></p>
+
+<table>
+    <thead>
+        <tr>    
+            <th>Title </th>
+            <th>Description </th>
+            <th>Author </th>
+            <th>Rate </th>
+            <th>Date Started </th>
+            <th>Date Read </th>
+            <th>Status </th>
+            <th>Actions </th>
+        </tr>
+    </thead>
+    <tbody> 
+        <tr *ngFor="let book of books">
+            <td> {{book.title}}                         </td>
+            <td> {{book.description | slice: 0:50}}...  </td>
+            <td> {{book.author}}                        </td>
+            <td> {{book.rate}}                          </td>
+
+            <td> {{book.dateStart | date:"dd/MM/yyyy"}} </td>
+            <td> {{book.dateEnd   | date:"dd/MM/yyyy"}} </td>
+            <td> {{book.dateEnd ? "Read" 
+                                : book.dateStart 
+                                ? "In progress..." 
+                                : "Not started"}}       </td>
+            
+            <td>   Actions      </td>
+            
+        </tr>
+
+
+    </tbody>
+</table>
