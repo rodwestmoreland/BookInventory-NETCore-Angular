@@ -179,6 +179,9 @@ ClientBin/
 *.publishsettings
 orleans.codegen.cs
 
+.vscode
+.history
+
 /node_modules
 
 # RIA/Silverlight projects
